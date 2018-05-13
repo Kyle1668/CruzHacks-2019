@@ -1,0 +1,11 @@
+# api.py: 1
+# app.py: 1
+Flask == 1.0
+
+# seed.py: 1
+names == 0.3.0
+
+# api.py: 5
+# api_util.py: 4,5
+# seed.py: 3
+pymongo == 3.6.1
