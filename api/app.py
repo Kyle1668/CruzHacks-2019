@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import request
 from flask import jsonify
 import api_util
 
@@ -20,6 +21,12 @@ def get_hacker(hacker_id):
         request_result = api_util.get_hacker(hacker_id)
         return jsonify(request_result)
     return "bad connection"
+
+
+@app.route("/hackers/", methods=["POST"])
+def new_hacker():
+    new_hacker = api_util.new_hacker(data=request.json)
+    return jsonify(result=new_hacker)
 
 
 if __name__ == "__main__":

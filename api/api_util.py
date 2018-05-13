@@ -7,6 +7,7 @@ from pymongo.errors import ConnectionFailure
 
 db_uri = "mongodb://kyle:codeslug@ds221990.mlab.com:21990/cruzhacks-hackers"
 mongo_client = MongoClient(db_uri)
+hacker_collection = query = mongo_client["cruzhacks-hackers"]["hackers"]
 
 
 def valid_connection():
@@ -20,7 +21,7 @@ def valid_connection():
 
 
 def get_all_hackers():
-    query = mongo_client["cruzhacks-hackers"]["hackers"].find()
+    query = hacker_collection.find()
     request_results = []
 
     for record in list(query):
@@ -37,7 +38,7 @@ def get_all_hackers():
 
 
 def get_hacker(hacker_id):
-    query = mongo_client["cruzhacks-hackers"]["hackers"].find_one({"id": hacker_id})
+    query = hacker_collection.find_one({"id": hacker_id})
 
     if query is not None:
         hacker = HackerProfile(
@@ -49,3 +50,15 @@ def get_hacker(hacker_id):
         return {"count": 1, "results": hacker.get_data()}
     else:
         return {"count": 0, "results": None}
+
+
+def new_hacker(data):
+    new_hacker = HackerProfile(
+                hacker_id=data["id"],
+                name=data["name"],
+                email=data["email"],
+                college=data["college"])
+
+    hacker_collection.insert(new_hacker.get_data())
+
+    return hacker_collection.find_one({"id": new_hacker.get_data["id"]})
