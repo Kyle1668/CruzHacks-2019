@@ -7,4 +7,6 @@ services:
     ports:
       - "3000:3000"
   mongodb:
-    image: mongo:3.0.2
+    image: mongo:latest
+    container_name: "database"
+    
