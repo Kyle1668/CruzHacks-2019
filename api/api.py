@@ -35,9 +35,9 @@ def get_hacker(hacker_id):
             email=query["email"],
             college=query["college"])
 
-        return {"count": 1, "results": hacker.get_data()}
+        return {"results": hacker.get_data()}
 
-    return {"count": 0, "results": None}
+    return {"results": None}
 
 
 def new_hacker(data):

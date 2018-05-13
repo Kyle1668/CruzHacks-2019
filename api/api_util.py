@@ -17,6 +17,6 @@ def generate_hacker_id(hackers_collection):
     if records.count() > 0:
         highest_id = records.sort("id", DESCENDING)[0]["id"]
         print("highest_id: " + str(highest_id))
-        return int(highest_id) + 1
+        return str(int(highest_id) + 1)
     else:
-        return 1
+        return "1"
