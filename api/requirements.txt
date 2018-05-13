@@ -1,5 +1,0 @@
-# app.py: 1
-Flask == 1.0
-
-# app.py: 2
-pymongo == 3.6.1

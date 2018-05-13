@@ -27,22 +27,30 @@ majors = [
     "Finance",
     "Electrical Engineering"]
 
-for count in range(25):
-    name = names.get_full_name()
-    email = name.replace(" ", "").lower() + "@ucsc.edu"
-    major = random.choice(majors)
 
-    hacker = {
-        "college": "UCSC",
-        "name": name,
-        "email": email,
-        "major": major
-    }
+def seed_db():
+    """
+        Seeds the mongo database with 25 randomly generated hackers.
+        This is run when the docker container is built.
+    """
 
-    print(hacker)
+    for count in range(25):
+        name = names.get_full_name()
+        email = name.replace(" ", "").lower() + "@ucsc.edu"
+        major = random.choice(majors)
 
-    new_hacker(hacker)
+        hacker = {
+            "college": "UCSC",
+            "name": name,
+            "email": email,
+            "major": major
+        }
+
+        print(hacker)
+
+        new_hacker(hacker)
+
+    print("Database Seeded")
 
 
-print("Database Seeded")
-
+seed_db()

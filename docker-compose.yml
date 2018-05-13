@@ -1,9 +1,9 @@
 version: "3"
 services:
   hacker-api:
-    build: ./api/
+    build: ./hacker_api/
     volumes:
-      - ./api:/cruzhacks/api/
+      - ./hacker_api:/cruzhacks/api/
     ports:
       - "300:300"
   mongodb:
