@@ -1,5 +1,8 @@
-from pymongo.errors import ConnectionFailure
+import datetime
+import time
+
 from pymongo import DESCENDING
+from pymongo.errors import ConnectionFailure
 
 
 def valid_connection(mongo_client):
@@ -9,6 +12,11 @@ def valid_connection(mongo_client):
         return True
     except ConnectionFailure:
         return False
+
+
+def get_timestamp():
+    ts = time.time()
+    return datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 
 
 def generate_hacker_id(hackers_collection):

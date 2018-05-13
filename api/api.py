@@ -4,7 +4,8 @@ from api_util import generate_hacker_id
 from hacker_profile import HackerProfile
 from pymongo import MongoClient
 
-mongo_client = MongoClient("mongodb://kyle:codeslug@ds221990.mlab.com:21990/cruzhacks-hackers")
+mongo_client = MongoClient(
+    "mongodb://kyle:codeslug@ds221990.mlab.com:21990/cruzhacks-hackers")
 hackers_collection = mongo_client["cruzhacks-hackers"]["hackers"]
 
 
@@ -43,11 +44,22 @@ def get_hacker(hacker_id):
 def new_hacker(data):
     new_id = generate_hacker_id(hackers_collection)
     new_hacker = HackerProfile(
-                hacker_id=new_id,
-                name=data["name"],
-                email=data["email"],
-                college=data["college"])
+        hacker_id=new_id,
+        name=data["name"],
+        email=data["email"],
+        college=data["college"])
 
     hackers_collection.insert(new_hacker.get_data())
 
     return new_hacker.get_data()
+
+
+def update_hacker(target_id, updates):
+    hacker_exists = hackers_collection.find({"id": target_id}).count() > 0
+
+    if hacker_exists:
+        hackers_collection.update_one({"id": target_id}, {"$set": updates})
+        # return hackers_collection.find_one({"id": target_id})
+        return "updated!"
+    else:
+        "Hacker not found"

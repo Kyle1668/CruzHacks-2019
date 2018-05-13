@@ -2,14 +2,13 @@ from flask import Flask, jsonify, request
 
 import api
 import api_util
-from api import mongo_client
 
 app = Flask(__name__)
 
 
 @app.route("/hackers/", methods=["GET"])
 def get_all_hackers():
-    if api_util.valid_connection(mongo_client):
+    if api_util.valid_connection(api.mongo_client):
         request_results = api.get_all_hackers()
         return jsonify(count=len(request_results), results=request_results)
 
@@ -18,7 +17,7 @@ def get_all_hackers():
 
 @app.route("/hackers/<hacker_id>", methods=["GET"])
 def get_hacker(hacker_id):
-    if api_util.valid_connection(mongo_client):
+    if api_util.valid_connection(api.mongo_client):
         request_result = api.get_hacker(hacker_id)
         return jsonify(request_result)
 
@@ -27,9 +26,19 @@ def get_hacker(hacker_id):
 
 @app.route("/hackers/", methods=["POST"])
 def new_hacker():
-    if api_util.valid_connection(mongo_client):
+    if api_util.valid_connection(api.mongo_client):
         new_hacker = api.new_hacker(data=request.json)
         return jsonify(result=new_hacker)
+
+    return "bad connection"
+
+
+@app.route("/hackers/<hacker_id>", methods=["PUT"])
+def update_hacker(hacker_id):
+    if api_util.valid_connection(api.mongo_client):
+        updated_hacker = api.update_hacker(
+            target_id=hacker_id, updates=request.json)
+        return jsonify(result=updated_hacker)
 
     return "bad connection"
 
