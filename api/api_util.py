@@ -2,10 +2,9 @@ from flask import Flask
 from flask import jsonify
 from flask import request
 from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure
 from hacker_profile import HackerProfile
+from pymongo.errors import ConnectionFailure
 
-app = Flask(__name__)
 
 db_uri = "mongodb://kyle:codeslug@ds221990.mlab.com:21990/cruzhacks-hackers"
 mongo_client = MongoClient(db_uri)
@@ -21,7 +20,6 @@ def valid_connection():
         return False
 
 
-@app.route("/hackers/")
 def get_all_hackers():
     if valid_connection():
         query = mongo_client["cruzhacks-hackers"]["hackers"].find()
@@ -42,7 +40,6 @@ def get_all_hackers():
     return "bad connection"
 
 
-@app.route("/hackers/<hacker_id>")
 def get_hacker(hacker_id):
     if valid_connection():
         query = mongo_client["cruzhacks-hackers"]["hackers"].find_one({"id": hacker_id})
@@ -58,7 +55,3 @@ def get_hacker(hacker_id):
 
         return jsonify(count=0, results={})
     return "bad connection"
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=3000, debug=True)
