@@ -19,7 +19,7 @@ def valid_connection():
         return False
 
 
-def get_every_hacker():
+def get_all_hackers():
     query = mongo_client["cruzhacks-hackers"]["hackers"].find()
     request_results = []
 
@@ -36,7 +36,7 @@ def get_every_hacker():
     return request_results
 
 
-def get_single_hacker(hacker_id):
+def get_hacker(hacker_id):
     query = mongo_client["cruzhacks-hackers"]["hackers"].find_one({"id": hacker_id})
 
     if query is not None:

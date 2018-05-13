@@ -12,6 +12,6 @@ COPY . cruzhacks/api/
 
 WORKDIR cruzhacks/api/
 
-EXPOSE 3000
+EXPOSE 300
 
 CMD ["python", "app.py"]

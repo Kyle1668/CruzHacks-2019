@@ -5,8 +5,8 @@ services:
     volumes:
       - ./api:/cruzhacks/api/
     ports:
-      - "3000:3000"
+      - "300:300"
   mongodb:
     image: mongo:latest
     container_name: "database"
-    
+
