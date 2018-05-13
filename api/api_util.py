@@ -48,4 +48,4 @@ def get_single_hacker(hacker_id):
 
         return {"count": 1, "results": hacker.get_data()}
     else:
-        return {"count": 1, "results": None}
+        return {"count": 0, "results": None}
