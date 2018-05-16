@@ -70,11 +70,11 @@ def get_hacker(hacker_id):
 
     if query is not None:
         hacker = HackerProfile(
-            hacker_id=record["id"],
-            name=record["name"],
-            email=record["email"],
-            college=record["college"],
-            major=record["major"])
+            hacker_id=query["id"],
+            name=query["name"],
+            email=query["email"],
+            college=query["college"],
+            major=query["major"])
 
         return {"results": hacker.get_data()}
 
