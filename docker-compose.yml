@@ -8,5 +8,5 @@ services:
       - "300:300"
   mongodb:
     image: mongo:3.6.4-jessie
-    container_name: "database"
+    container_name: "hacker-database"
 
