@@ -1,86 +1,9 @@
-commit 5b3e085b7ab1a85f63bb9d1e6e8ddabb3853598d
+commit 46911cdd2e2e8a41868d29fbfa41c229854c910d
 Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sun May 13 11:16:35 2018 -0700
+Date:   Sun May 13 12:02:15 2018 -0700
 
-    changed folder structure and added seed file
+    updated readme
 
-commit 016b4ee8b255b18dae578813e2ec9e895db36852
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sun May 13 10:12:32 2018 -0700
-
-    aded basic support for PUT
-
-commit 5ca526854c56870ae370eebab13c4ee6d8d3077c
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 23:56:27 2018 -0700
-
-    Fixed lookup issues
-
-commit 21d952a9dd993fd4ff4c288978fcb9a35f57c8f5
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 23:54:48 2018 -0700
-
-    Fixed lookup issues
-
-commit fac65138e5b85e8a15826fc9ae8690246dafde84
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 23:42:08 2018 -0700
-
-    got ids working
-
-commit 368136c53923f7499d50120bc0234bea525683df
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 22:25:07 2018 -0700
-
-    Added support for POST
-
-commit 41e0dae03ae8bf2b92ddc8453142b2c3a3c0dc15
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 21:51:11 2018 -0700
-
-    Changed port and modified api util
-
-commit e454ae6615285e1dd1eab52ffe9bdc603dfc75f0
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 18:38:40 2018 -0700
-
-    small changes in api-util
-
-commit 58f4db2893f5ae728738d708b67e0a47d7bce642
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 18:37:27 2018 -0700
-
-    made api util file
-
-commit ceb83f9c03259ede18041c77fc53363db469b037
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 18:22:02 2018 -0700
-
-    Made progress on GET support
-
-commit 052b721dee4cbbc89927421c7b11d4c363a1bec1
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 17:40:27 2018 -0700
-
-    got basic get request working
-
-commit a9d26fa882414206f785cd1fa4dff3b6a337cae3
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 16:15:38 2018 -0700
-
-    Set up docker-compose
-
-commit 479f869ac3af317d9f2a45b22d6ba35657210d91
-Author: Kyle O'Brien <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 15:23:00 2018 -0700
-
-    Create README.md
-
-commit 202a5c6d84bb206c698d33e95ab8c70f2f355e85
-Author: Kyle1668 <kyledevinobrien1@gmail.com>
-Date:   Sat May 12 15:17:26 2018 -0700
-
-    Initial Commit
 commit e085318376675a3e9791f4dd09d6ecfa44672a2a
 Merge: 3e39710 854cbee
 Author: Kyle O'Brien <kyledevinobrien1@gmail.com>
