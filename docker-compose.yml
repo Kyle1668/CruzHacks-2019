@@ -1,12 +1,22 @@
 version: "3"
+
 services:
   hacker-api:
+    container_name: "hacker-api"
     build: ./hacker_api/
     volumes:
       - ./hacker_api:/cruzhacks/api/
     ports:
       - "300:300"
+    networks:
+      - backend
+    depends_on:
+      - mongodb
   mongodb:
+    container_name: "hacker-database"
     image: mongo:latest
-    container_name: "database"
+    networks:
+      - backend
 
+networks:
+  backend:

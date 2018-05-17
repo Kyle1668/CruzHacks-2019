@@ -1,14 +1,10 @@
+import sys
 import names
 import random
 import pymongo
 from api import mongo_client, hackers_collection, new_hacker
+from api_util import valid_connection
 
-
-print("Deleting Previous Records")
-
-hackers_collection.remove()
-
-print("Seeding Database")
 
 majors = [
     "Computer Science",
@@ -50,7 +46,15 @@ def seed_db():
 
         new_hacker(hacker)
 
+
+if valid_connection(mongo_client):
+    print("Deleting Previous Records")
+    hackers_collection.remove()
+    print("Seeding Database")
+    seed_db()
     print("Database Seeded")
-
-
-seed_db()
+else:
+    error_message = """    Invalid Database Connection. This is likelly caused by internet connection blocking
+    acsess to MLab. Try running on a VPN or another internet connection."""
+    print("\033[91m" + error_message + "\033[0m")
+    sys.exit()
