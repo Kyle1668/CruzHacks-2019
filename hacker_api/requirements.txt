@@ -2,10 +2,17 @@
 # app.py: 1
 Flask == 1.0
 
-# seed.py: 1
+# app.py: 3
+# seed.py: 5
+api == 0.0.7
+
+# seed.py: 2
 names == 0.3.0
 
 # api.py: 5
 # api_util.py: 4,5
-# seed.py: 3
+# seed.py: 4
 pymongo == 3.6.1
+
+# tests/test_flaskr.py: 4
+pytest == 3.5.1
