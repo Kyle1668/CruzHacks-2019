@@ -13,10 +13,15 @@ services:
     depends_on:
       - mongodb
   mongodb:
+<<<<<<< HEAD
     container_name: "hacker-database"
     image: mongo:latest
     networks:
       - backend
+=======
+    image: mongo:3.6.4-jessie
+    container_name: "hacker-database"
+>>>>>>> 9a0f8d522444717fcf000d71ea298a35b05147f2
 
 networks:
   backend:
