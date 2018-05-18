@@ -1,6 +1,6 @@
 from flask import Flask, request
 
-from api_util import generate_hacker_id, get_timestamp
+from util.hacker_util import generate_hacker_id, get_timestamp
 from hacker_profile import HackerProfile
 from pymongo import MongoClient
 

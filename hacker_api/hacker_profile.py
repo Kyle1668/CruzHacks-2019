@@ -1,4 +1,4 @@
-from api_util import get_timestamp
+from util.hacker_util import get_timestamp
 
 
 class HackerProfile:
