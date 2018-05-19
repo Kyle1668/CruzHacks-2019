@@ -7,6 +7,7 @@ def get_hackers():
 
     if valid_connection(application.mongo_client):
         request_results = application.get_all_hackers()
-        return jsonify(code="200", message="Hackers retrieved successfully.", count=len(request_results), results=request_results)
+        return jsonify(code="200", message="Hackers retrieved successfully.", count=len(
+            request_results), results=request_results)
 
     return jsonify(code="500", message="Unable to connect to database.")

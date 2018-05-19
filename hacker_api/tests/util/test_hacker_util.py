@@ -3,34 +3,18 @@ import time
 
 
 def get_timestamp():
-    """[Returns the current timestamp.]
-
-    Returns:
-        [str] -- [The formatted timestamp.]
-    """
-
     ts = time.time()
     return datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 
 
 def test_get_timestamp():
     ts = time.time()
-    current_time = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+    current_time = datetime.datetime.fromtimestamp(
+        ts).strftime('%Y-%m-%d %H:%M:%S')
     assert get_timestamp().split(":")[:1] == current_time.split(":")[:1]
 
 
 def generate_hacker_id(hackers_collection=None):
-    """[Generates a new hacker id by making it one larger than the currently largest.]
-
-    Arguments:
-        hackers_collection {[dict]} -- [The DB collection containing the hackers.]
-
-    Returns:
-        [str] -- [The new hacker id]
-    """
-
-    records = ["dummy db", "dummy db", "dummy db"]
-
     if len(records) > 0:
         highest_id = 121
         return highest_id + 1
