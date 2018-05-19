@@ -9,7 +9,9 @@ Hi CruzHacks team! I'm super stoked by the chance to help to contribute to CruzH
 ### How to run
 - The api is wrapped inside two docker container orchestrated using docker-compose. You will need to have Docker installed on your system. To run, cd to the root directory of the project and run `docker-compose up`. This will build and launch the Docker containers.
 
+### Note
 - I've found that campus wifi can block the connection to the MongoDB databse. If so, you will either have to run on a VPN or a private network.
+- The entire project uses about 480 mb and takes ~2 minutes to build.
 
 ######
 
