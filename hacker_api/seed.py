@@ -4,6 +4,7 @@ import random
 import pymongo
 
 from application import mongo_client, hackers_collection, new_hacker
+from util.api_util import valid_connection
 
 
 majors = [
