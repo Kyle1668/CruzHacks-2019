@@ -66,7 +66,7 @@ def get_hacker(hacker_id):
         [dict] -- [The info for the desired hacker if found. Empty if not.]
     """
 
-    query = hackers_collection.find_one({"id": int(hacker_id)})
+    query = hackers_collection.find_one({"id": hacker_id})
 
     if query is not None:
         hacker = HackerProfile(
@@ -76,9 +76,9 @@ def get_hacker(hacker_id):
             college=query["college"],
             major=query["major"])
 
-        return {"results": hacker.get_data()}
+        return hacker.get_data()
 
-    return {"results": None}
+    return None
 
 
 def update_hacker(target_id, updates):
