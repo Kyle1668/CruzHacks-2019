@@ -38,24 +38,24 @@ def get_hacker(hacker_id):
 
     try:
         hacker_id = int(hacker_id)
+
+        if valid_connection(application.mongo_client):
+            request_result = application.get_hacker(hacker_id)
+
+            if request_result:
+                return jsonify(
+                    code="200",
+                    message="Hacker retrieved successfully.",
+                    results=request_result)
+            else:
+                return jsonify(
+                    code="400",
+                    message="Hacker not found.",
+                    results=request_result)
+
+            return jsonify(code="500", message="Unable to connect to database.")
     except ValueError:
         return jsonify(code="400", message="Hacker ID must be an integer.")
-
-    if valid_connection(application.mongo_client):
-        request_result = application.get_hacker(hacker_id)
-
-        if request_result:
-            return jsonify(
-                code="200",
-                message="Hacker retrieved successfully.",
-                results=request_result)
-        else:
-            return jsonify(
-                code="400",
-                message="Hacker not found.",
-                results=request_result)
-
-    return jsonify(code="500", message="Unable to connect to database.")
 
 
 @app.route("/hackers/", methods=["POST"])
