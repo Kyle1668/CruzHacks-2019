@@ -1,7 +1,7 @@
 import names
 import random
 import pymongo
-from app import mongo_client, hackers_collection, new_hacker
+from application import mongo_client, hackers_collection, new_hacker
 
 
 print("Deleting Previous Records")
