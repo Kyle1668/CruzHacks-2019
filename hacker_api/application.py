@@ -20,12 +20,19 @@ def new_hacker(data):
     """
 
     new_id = generate_hacker_id(hackers_collection)
-    new_hacker = HackerProfile(
-        hacker_id=new_id,
-        name=data["name"],
-        email=data["email"],
-        college=data["college"],
-        major=data["major"])
+
+    new_hacker = HackerProfile(new_id, None, None, None, None, None)
+
+    if "name" in data:
+        new_hacker.name = data["name"]
+    if "email" in data:
+        new_hacker.email = data["email"]
+    if "college" in data:
+        new_hacker.college = data["college"]
+    if "major" in data:
+        new_hacker.major = data["major"]
+    if "dietary_preference" in data:
+        new_hacker.dietary_preference = data["dietary_preference"]
 
     hackers_collection.insert(new_hacker.get_data())
     return new_hacker.get_data()
@@ -47,7 +54,8 @@ def get_all_hackers():
             name=record["name"],
             email=record["email"],
             college=record["college"],
-            major=record["major"])
+            major=record["major"],
+            dietary_preference=record["dietary_preference"])
 
         data = hacker.get_data()
         request_results.append(data)
@@ -73,7 +81,8 @@ def get_hacker(hacker_id):
             name=query["name"],
             email=query["email"],
             college=query["college"],
-            major=query["major"])
+            major=query["major"],
+            dietary_preference=query["dietary_preference"])
 
         return hacker.get_data()
 
