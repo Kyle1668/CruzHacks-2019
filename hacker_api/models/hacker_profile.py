@@ -17,7 +17,8 @@ class HackerProfile:
 
     def get_timestamp(self):
         ts = time.time()
-        return datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+        return datetime.datetime.fromtimestamp(
+            ts).strftime('%Y-%m-%d %H:%M:%S')
 
     def get_data(self):
         return {
