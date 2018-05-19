@@ -17,4 +17,7 @@ EXPOSE 300
 # Seeds the database with 25 randomly generated hackers.
 RUN python -u seed.py
 
-CMD ["python", "app.py"]
+# Runs unit tests.
+RUN pytest
+
+CMD ["python", "api.py"]

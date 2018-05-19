@@ -2,26 +2,18 @@ import sys
 import names
 import random
 import pymongo
-from api import mongo_client, hackers_collection, new_hacker
-from api_util import valid_connection
+
+from application import mongo_client, hackers_collection, new_hacker
 
 
 majors = [
-    "Computer Science",
-    "Economics",
-    "History",
-    "Graphic Design",
-    "Design",
-    "Biology",
-    "Engineering",
-    "Chemistry",
-    "Computer Engineering",
-    "Data Science",
-    "Poetry",
-    "Marine Biology",
-    "Fashion",
-    "Finance",
-    "Electrical Engineering"]
+    "Computer Science", "Economics", "History", "Graphic Design", "Design",
+    "Biology", "Engineering", "Chemistry", "Computer Engineering",
+    "Data Science", "Poetry", "Marine Biology", "Fashion", "Finance",
+    "Electrical Engineering"
+]
+
+dietary_preferences = ["None", "None", "None", "Vegan", "Vegetarian", "Ketogenic"]
 
 
 def seed_db():
@@ -34,12 +26,14 @@ def seed_db():
         name = names.get_full_name()
         email = name.replace(" ", "").lower() + "@ucsc.edu"
         major = random.choice(majors)
+        diet = random.choice(dietary_preferences)
 
         hacker = {
             "college": "UCSC",
             "name": name,
             "email": email,
-            "major": major
+            "major": major,
+            "dietary_preference": diet
         }
 
         print(hacker)
