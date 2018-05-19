@@ -112,10 +112,13 @@ def delete_hacker(target_id):
         [str] -- [String telling whether the deletion was successful.]
     """
 
-    hacker_exists = hackers_collection.find({"id": target_id}).count() != 1
+    status = "500"
+
+    hacker_exists = bool(hackers_collection.find({"id": { "$in": target_id}}))
 
     if hacker_exists:
-        hackers_collection.remove({"id": target_id})
-        return "deleted!"
-    else:
-        "Hacker not found"
+        hackers_collection.delete_one({"id": target_id})
+        status = "200"
+
+    return status
+

@@ -26,4 +26,4 @@ RUN sudo find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
 # Runs unit tests.
 RUN pytest
 
-CMD ["python", "api.py"]
+CMD ["python", "-u", "api.py"]
