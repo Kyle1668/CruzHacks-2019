@@ -28,7 +28,6 @@ def new_hacker(data):
         major=data["major"])
 
     hackers_collection.insert(new_hacker.get_data())
-
     return new_hacker.get_data()
 
 
@@ -96,11 +95,8 @@ def update_hacker(target_id, updates):
 
     if hacker_exists:
         hackers_collection.update_one({"id": target_id}, {"$set": updates})
-        hackers_collection.update_one({
-            "id": target_id
-        }, {"$set": {
-            "last_updated_at": get_timestamp()
-        }})
+        new_timestamp = {"last_updated_at": get_timestamp()}
+        hackers_collection.update_one({"id": target_id}, {"$set": new_timestamp})
         return "updated!"
     else:
         "Hacker not found"
@@ -116,7 +112,7 @@ def delete_hacker(target_id):
         [str] -- [String telling whether the deletion was successful.]
     """
 
-    hacker_exists = hackers_collection.find({"id": target_id}).count() > 0
+    hacker_exists = hackers_collection.find({"id": target_id}).count() != 1
 
     if hacker_exists:
         hackers_collection.remove({"id": target_id})
