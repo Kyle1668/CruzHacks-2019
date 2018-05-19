@@ -16,6 +16,8 @@ majors = [
     "Electrical Engineering"
 ]
 
+dietary_preferences = ["None", "None", "None", "Vegan", "Vegetarian", "Ketogenic"]
+
 
 def seed_db():
     """
@@ -27,12 +29,14 @@ def seed_db():
         name = names.get_full_name()
         email = name.replace(" ", "").lower() + "@ucsc.edu"
         major = random.choice(majors)
+        diet = random.choice(dietary_preferences)
 
         hacker = {
             "college": "UCSC",
             "name": name,
             "email": email,
-            "major": major
+            "major": major,
+            "dietary_preference": diet
         }
 
         print(hacker)
