@@ -15,6 +15,7 @@ def test_get_timestamp():
 
 
 def generate_hacker_id(hackers_collection=None):
+    records = ["hacker 1", "hacker 2", "hacker 3"]
     if len(records) > 0:
         highest_id = 121
         return highest_id + 1
