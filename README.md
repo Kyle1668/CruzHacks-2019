@@ -16,7 +16,7 @@ Hi CruzHacks team! I'm super stoked by the chance to help to contribute to CruzH
 ######
 
 ### Example
-`curl -XGET -H ‘Content-Type: application/json’ http://localhost:30/hackers/1`
+`curl -XGET -H ‘Content-Type: application/json’ http://localhost:300/hackers/1`
 
 ```javascript
 {
