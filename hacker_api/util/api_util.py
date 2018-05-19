@@ -1,4 +1,3 @@
-from pymongo import DESCENDING
 from pymongo.errors import ConnectionFailure
 
 

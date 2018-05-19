@@ -1,6 +1,8 @@
 import datetime
 import time
 
+from pymongo import DESCENDING
+
 
 def get_timestamp():
     """[Returns the current timestamp.]

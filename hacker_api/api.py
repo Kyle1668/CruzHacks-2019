@@ -1,7 +1,7 @@
 from flask import Flask, request
 
 from util.hacker_util import generate_hacker_id, get_timestamp
-from hacker_profile import HackerProfile
+from models.hacker_profile import HackerProfile
 from pymongo import MongoClient
 
 mlab_uri = "mongodb://kyle:codeslug@ds221990.mlab.com:21990/cruzhacks-hackers"

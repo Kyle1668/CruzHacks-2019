@@ -1,3 +1,6 @@
+import datetime
+import time
+
 from util.hacker_util import get_timestamp
 
 
@@ -9,8 +12,12 @@ class HackerProfile:
         self.email = email
         self.college = college
         self.major = major
-        self.created_at = get_timestamp()
-        self.last_updated_at = get_timestamp()
+        self.created_at = self.get_timestamp()
+        self.last_updated_at = self.get_timestamp()
+
+    def get_timestamp(self):
+        ts = time.time()
+        return datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 
     def get_data(self):
         return {
