@@ -9,8 +9,8 @@ def get_timestamp():
 
 def test_get_timestamp():
     ts = time.time()
-    current_time = datetime.datetime.fromtimestamp(
-        ts).strftime('%Y-%m-%d %H:%M:%S')
+    current_time = datetime.datetime.fromtimestamp(ts).strftime(
+        '%Y-%m-%d %H:%M:%S')
     assert get_timestamp().split(":")[:1] == current_time.split(":")[:1]
 
 

@@ -3,7 +3,6 @@ import random
 import pymongo
 from application import mongo_client, hackers_collection, new_hacker
 
-
 print("Deleting Previous Records")
 
 hackers_collection.remove()
@@ -11,21 +10,11 @@ hackers_collection.remove()
 print("Seeding Database")
 
 majors = [
-    "Computer Science",
-    "Economics",
-    "History",
-    "Graphic Design",
-    "Design",
-    "Biology",
-    "Engineering",
-    "Chemistry",
-    "Computer Engineering",
-    "Data Science",
-    "Poetry",
-    "Marine Biology",
-    "Fashion",
-    "Finance",
-    "Electrical Engineering"]
+    "Computer Science", "Economics", "History", "Graphic Design", "Design",
+    "Biology", "Engineering", "Chemistry", "Computer Engineering",
+    "Data Science", "Poetry", "Marine Biology", "Fashion", "Finance",
+    "Electrical Engineering"
+]
 
 
 def seed_db():

@@ -96,8 +96,11 @@ def update_hacker(target_id, updates):
 
     if hacker_exists:
         hackers_collection.update_one({"id": target_id}, {"$set": updates})
-        hackers_collection.update_one(
-            {"id": target_id}, {"$set": {"last_updated_at": get_timestamp()}})
+        hackers_collection.update_one({
+            "id": target_id
+        }, {"$set": {
+            "last_updated_at": get_timestamp()
+        }})
         return "updated!"
     else:
         "Hacker not found"

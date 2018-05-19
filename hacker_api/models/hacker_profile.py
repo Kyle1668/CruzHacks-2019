@@ -5,7 +5,6 @@ from util.hacker_util import get_timestamp
 
 
 class HackerProfile:
-
     def __init__(self, hacker_id, name, email, college, major):
         self.id = hacker_id
         self.name = name
@@ -17,8 +16,8 @@ class HackerProfile:
 
     def get_timestamp(self):
         ts = time.time()
-        return datetime.datetime.fromtimestamp(
-            ts).strftime('%Y-%m-%d %H:%M:%S')
+        return datetime.datetime.fromtimestamp(ts).strftime(
+            '%Y-%m-%d %H:%M:%S')
 
     def get_data(self):
         return {

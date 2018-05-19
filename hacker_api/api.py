@@ -16,8 +16,11 @@ def get_hackers():
 
     if valid_connection(application.mongo_client):
         request_results = application.get_all_hackers()
-        return jsonify(code="200", message="Hackers retrieved successfully.", count=len(
-            request_results), results=request_results)
+        return jsonify(
+            code="200",
+            message="Hackers retrieved successfully.",
+            count=len(request_results),
+            results=request_results)
 
     return jsonify(code="500", message="Unable to connect to database.")
 
@@ -41,7 +44,9 @@ def get_hacker(hacker_id):
     if valid_connection(application.mongo_client):
         request_result = application.get_hacker(hacker_id)
         return jsonify(
-            code="200", message="Hacker retrieved successfully.", results=request_result)
+            code="200",
+            message="Hacker retrieved successfully.",
+            results=request_result)
 
     return jsonify(code="500", message="Unable to connect to database.")
 
@@ -62,7 +67,9 @@ def create_new_hacker():
     if valid_connection(application.mongo_client):
         new_hacker = application.new_hacker(data=request.json)
         return jsonify(
-            code="200", message="Hacker created successfully.", results=new_hacker)
+            code="200",
+            message="Hacker created successfully.",
+            results=new_hacker)
 
     return jsonify(code="500", message="Unable to connect to database.")
 
@@ -85,11 +92,11 @@ def update_hacker(hacker_id):
 
     if valid_connection(application.mongo_client):
         updated_hacker = application.update_hacker(
-            target_id=hacker_id,
-            updates=request.json
-        )
+            target_id=hacker_id, updates=request.json)
         return jsonify(
-            code="200", message="Hacker updated successfully.", results=updated_hacker)
+            code="200",
+            message="Hacker updated successfully.",
+            results=updated_hacker)
 
     return jsonify(code="500", message="Unable to connect to database.")
 
@@ -111,11 +118,11 @@ def delete_hacker(hacker_id):
         return jsonify(code="400", message="Hacker ID must be an integer.")
 
     if valid_connection(application.mongo_client):
-        deleted_hacker = application.delete_hacker(
-            target_id=hacker_id,
-        )
+        deleted_hacker = application.delete_hacker(target_id=hacker_id, )
         return jsonify(
-            code="200", message="Hacker deleted successfully.", results=deleted_hacker)
+            code="200",
+            message="Hacker deleted successfully.",
+            results=deleted_hacker)
 
     return jsonify(code="500", message="Unable to connect to database.")
 
