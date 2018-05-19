@@ -52,4 +52,4 @@ Hi CruzHacks team! I'm super stoked by the chance to help to contribute to CruzH
 ######
 
 ### Links
-  - [Kyle O'Brien Linkedin](www.linkedin.com/in/kyle1668)
+  - [Kyle O'Brien Linkedin](https://www.linkedin.com/in/kyle1668)
