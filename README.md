@@ -23,7 +23,7 @@ Hi CruzHacks team! I'm super stoked by the chance to help to contribute to CruzH
   "results": {
     "college": "UCSC",
     "created_at": "2018-05-19 04:51:07",
-    "email": "idaspicer@ucsc.edu",
+    "email": "sslug@ucsc.edu",
     "id": 1,
     "last_updated_at": "2018-05-19 04:51:07",
     "major": "Graphic Design",
