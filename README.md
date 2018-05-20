@@ -2,10 +2,6 @@
 
 ######
 
-Hi CruzHacks team! I'm super stoked by the chance to help to contribute to CruzHacks 2019. I think CruzHack's aim to promote inclusion in tech is fantastic and I want to help! Here is my crack at the developer assignment. I had a bunch of fun working on it!
-
-######
-
 ### How to run
 - The api is wrapped inside two docker container orchestrated using docker-compose. You will need to have Docker installed on your system. To run, cd to the root directory of the project and run `docker-compose up`. This will build and launch the Docker containers.
 
