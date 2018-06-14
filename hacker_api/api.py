@@ -1,9 +1,10 @@
-from flask import Flask, jsonify, request
-
 import application
+from flask import Flask, jsonify, request
 from util.api_util import valid_connection
 
 app = Flask(__name__)
+
+test = "works"
 
 
 @app.route("/hackers/", methods=["GET"])
@@ -53,7 +54,7 @@ def get_hacker(hacker_id):
                     message="Hacker not found.",
                     results=request_result)
 
-            return jsonify(code="500", message="Unable to connect to database.")
+        return jsonify(code="500", message="Unable to connect to database.")
     except ValueError:
         return jsonify(code="400", message="Hacker ID must be an integer.")
 

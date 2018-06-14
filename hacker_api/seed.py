@@ -1,11 +1,9 @@
-import sys
-import names
 import random
-import pymongo
+import sys
 
+import names
 from application import mongo_client, hackers_collection, new_hacker
 from util.api_util import valid_connection
-
 
 majors = [
     "Computer Science", "Economics", "History", "Graphic Design", "Design",

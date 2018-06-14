@@ -1,8 +1,6 @@
-from flask import Flask, request
-
-from util.hacker_util import generate_hacker_id, get_timestamp
 from models.hacker_profile import HackerProfile
 from pymongo import MongoClient
+from util.hacker_util import generate_hacker_id, get_timestamp
 
 mlab_uri = "mongodb://kyle:codeslug@ds221990.mlab.com:21990/cruzhacks-hackers"
 mongo_client = MongoClient(mlab_uri)
@@ -123,11 +121,10 @@ def delete_hacker(target_id):
 
     status = "500"
 
-    hacker_exists = bool(hackers_collection.find({"id": { "$in": target_id}}))
+    hacker_exists = bool(hackers_collection.find({"id": {"$in": target_id}}))
 
     if hacker_exists:
         hackers_collection.delete_one({"id": target_id})
         status = "200"
 
     return status
-

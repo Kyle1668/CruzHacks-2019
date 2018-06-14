@@ -1,8 +1,6 @@
 import datetime
 import time
 
-from util.hacker_util import get_timestamp
-
 
 class HackerProfile:
     def __init__(self, hacker_id, name, email, college, major, dietary_preference):
